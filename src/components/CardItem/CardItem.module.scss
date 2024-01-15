@@ -10,13 +10,19 @@
 }
 .cardInfo {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    .title {
-        font-size: 16px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+    @media (min-width: 580px) {
+        flex-direction: row;
     }
     .price {
-        font-size: 20px;
+        font-size: 16px;
+
+        @media (min-width: 820px) {
+            font-size: 20px;
+        }
     }
 }
 .button {
@@ -38,4 +44,42 @@
     top: 12px;
     right: 12px;
     color: #fff;
+}
+.img {
+    width: 140px;
+    height: 120px;
+
+    @media (min-width: 580px) {
+        width: 140px;
+        height: 120px;
+    }
+    @media (min-width: 820px) {
+        width: 230px;
+        height: 200px;
+    }
+    @media (min-width: 1024px) {
+        width: 302px;
+        height: 250px;
+    }
+}
+.item {
+    width: 140px;
+    @media (min-width: 580px) {
+        width: 140px;
+    }
+    @media (min-width: 820px) {
+        width: 230px;
+    }
+    @media (min-width: 1024px) {
+        width: 302px;
+    }
+}
+.title {
+    @media (min-width: 820px) {
+        font-size: 16px;
+        width: 151px;
+    }
+    @media (min-width: 1024px) {
+        width: 204px;
+    }
 }

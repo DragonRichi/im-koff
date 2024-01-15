@@ -1,9 +1,9 @@
 import styles from "../CardItem/CardItem.module.scss";
 
 export const CardItem = () => (
-  <li>
+  <li className={styles.item}>
     <article className={styles.card}>
-      <img src="/img/cardItem.png" alt="cardItem" />
+      <img src="/img/cardItem.png" alt="cardItem" className={styles.img} />
       <svg
         className={styles.like}
         width="16"
@@ -20,7 +20,6 @@ export const CardItem = () => (
           strokeLinejoin="round"
         />
       </svg>
-
       <div className={styles.cardInfo}>
         <span className={styles.title}>Кресло с подлокотниками</span>
         <span className={styles.price}>5 000 ₽</span>
