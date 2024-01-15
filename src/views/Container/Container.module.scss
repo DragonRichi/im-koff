@@ -30,18 +30,23 @@
         grid-template-columns: 94px 1fr auto;
         align-items: center;
     }
-    .logo {
-        grid-area: logo;
-    }
-    .search {
-        grid-area: search;
-    }
-    .navigation {
-        grid-area: navigation;
-    }
 }
 
 .containerOrder {
     display: flex;
     justify-content: space-between;
+}
+
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 580px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 820ox) {
+        gap: 32px;
+    }
 }

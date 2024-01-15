@@ -1,0 +1,41 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+.cardInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+        font-size: 16px;
+    }
+    .price {
+        font-size: 20px;
+    }
+}
+.button {
+    text-align: center;
+    border-radius: 32px;
+    border: 1px solid #780096;
+    padding: 12px 24px;
+
+    &:hover {
+        color: #fff;
+        background-color: #780096;
+        transition: background-color 0.3s ease-in-out;
+        // transition: color 0.1s ease-in-out;
+    }
+}
+.like {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #fff;
+}

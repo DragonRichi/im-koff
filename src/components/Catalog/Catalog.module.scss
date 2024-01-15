@@ -1,0 +1,28 @@
+.catalog {
+    padding-top: 40px;
+}
+.list {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #969eae;
+    li {
+        padding: 8px 14px;
+        border-radius: 32px;
+        background-color: #eeeff2;
+        border: 1px solid transparent;
+        &:hover {
+            border: 1px solid #780096;
+            .link {
+                color: #780096;
+            }
+        }
+        &:active {
+            background-color: #780096;
+            .link {
+                color: #fff;
+            }
+        }
+    }
+}
