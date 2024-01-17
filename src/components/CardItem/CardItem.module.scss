@@ -62,18 +62,7 @@
         height: 250px;
     }
 }
-.item {
-    width: 140px;
-    @media (min-width: 580px) {
-        width: 140px;
-    }
-    @media (min-width: 820px) {
-        width: 230px;
-    }
-    @media (min-width: 1024px) {
-        width: 302px;
-    }
-}
+
 .title {
     height: 50px;
     @media (min-width: 820px) {
