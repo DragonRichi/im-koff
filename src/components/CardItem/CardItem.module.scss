@@ -1,3 +1,6 @@
+article{
+    position: relative;
+}
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +29,7 @@
     }
 }
 .button {
+    width: 100%;
     text-align: center;
     border-radius: 32px;
     border: 1px solid #780096;

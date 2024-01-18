@@ -1,11 +1,19 @@
 .catalog {
-    padding-top: 40px;
+    padding-top: 24px;
+    overflow-x: hidden;
+    @media (min-width: 580px) {
+        padding-top: 32px;
+    }
+
+    @media (min-width: 820px) {
+        padding-top: 40px;
+    }
 }
 .list {
+    overflow-x: auto;
     display: flex;
     gap: 4px;
     align-items: center;
-    flex-wrap: wrap;
     color: #969eae;
     li {
         padding: 8px 14px;

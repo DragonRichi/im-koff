@@ -1,11 +1,38 @@
 import { Link } from "react-router-dom";
 import { API_URL } from "../../const";
 import styles from "../CardItem/CardItem.module.scss";
+import { useDispatch } from "react-redux";
+import { fetchAddToCart } from "../../store/cart/cart.slice";
 
-export const CardItem = ({ name, images: [image], id, price }) => (
-  <article>
-    <Link className={styles.card} to={`/product/${id}`}>
-      <img src={`${API_URL}/${image}`} alt="cardItem" className={styles.img} />
+const less = [
+  {
+    id: "5",
+    count: "5",
+  },
+];
+
+// eslint-disable-next-line arrow-body-style
+export const CardItem = ({ name, images: [image], id, price }) => {
+  const dispatch = useDispatch();
+  return (
+    <article>
+      <Link className={styles.card} to={`/product/${id}`}>
+        <img
+          src={`${API_URL}/${image}`}
+          alt="cardItem"
+          className={styles.img}
+        />
+
+        <div className={styles.cardInfo}>
+          <span className={styles.title}>{name}</span>
+          <span className={styles.price}>{price.toLocaleString()}&nbsp;₽</span>
+        </div>
+      </Link>
+      <button
+        className={styles.button}
+        onClick={() => dispatch(fetchAddToCart(less))}>
+        В корзину
+      </button>
       <button className={styles.like} aria-label="добавить в избранное">
         <svg
           width="16"
@@ -23,11 +50,6 @@ export const CardItem = ({ name, images: [image], id, price }) => (
           />
         </svg>
       </button>
-      <div className={styles.cardInfo}>
-        <span className={styles.title}>{name}</span>
-        <span className={styles.price}>{price.toLocaleString()}&nbsp;₽</span>
-      </div>
-      <button className={styles.button}>В корзину</button>
-    </Link>
-  </article>
-);
+    </article>
+  );
+};

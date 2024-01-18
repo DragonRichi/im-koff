@@ -13,6 +13,12 @@ export const fetchProductItem = createAsyncThunk(
       },
     });
     if (!response.ok) {
+      if (response.status === "401") {
+        return thunkAPI.rejectWithValue({
+          status: response.status,
+          error: "Не удалось получить данные о товаре!",
+        });
+      }
       throw new Error("Не удалось получить данные о товаре!");
     }
     return response.json();
@@ -22,7 +28,7 @@ export const fetchProductItem = createAsyncThunk(
 const productItem = createSlice({
   name: "productItem",
   initialState: {
-    data: [],
+    data: null,
     loading: false,
     error: null,
   },
@@ -30,7 +36,7 @@ const productItem = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchProductItem.pending, (state) => {
-        state.data = [];
+        state.data = null;
         state.loading = true;
         state.error = null;
       })

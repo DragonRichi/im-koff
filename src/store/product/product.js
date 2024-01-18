@@ -13,7 +13,13 @@ export const fetchProduct = createAsyncThunk(
       },
     });
     if (!response.ok) {
-      throw new Error("Не удалось получить список продуктов!");
+      if (response.status === "401") {
+        return thunkAPI.rejectWithValue({
+          status: response.status,
+          error: "Не удалось загрузить продукты!",
+        });
+      }
+      throw new Error("Не удалось загрузить продукты!");
     }
     return response.json();
   },

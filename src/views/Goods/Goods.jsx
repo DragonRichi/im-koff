@@ -6,6 +6,8 @@ import { Container } from "../Container/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProduct } from "../../store/product/product";
+import { fetchCart } from "../../store/cart/cart.slice";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
 
 export const Goods = () => {
   const dispatch = useDispatch();
@@ -14,11 +16,12 @@ export const Goods = () => {
 
   useEffect(() => {
     dispatch(fetchProduct());
+    dispatch(fetchCart());
   }, [dispatch]);
 
-  if (loading) return <div>Загрузка....</div>;
+  if (loading) return <ErrorPage error="Загрузка..." />;
 
-  if (error) return <div>Ошибка: {error}</div>;
+  if (error) return <ErrorPage error={error} />;
   return (
     <section className={styles.goods}>
       <Container>
