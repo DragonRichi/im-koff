@@ -10,7 +10,6 @@ import { Cart } from "./components/Cart/Cart";
 import { Catalog } from "./views/Catalog/Catalog";
 import { Goods } from "./views/Goods/Goods";
 import { ErrorPage } from "./views/ErrorPage/ErrorPage";
-import { fetchCart } from "./store/cart/cart.slice";
 
 const router = createBrowserRouter([
   {
