@@ -1,5 +1,10 @@
-article{
+article {
     position: relative;
+    height: 86%;
+    @media (min-width: 580px) {
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
 }
 .list {
     display: flex;
@@ -10,6 +15,7 @@ article{
     display: flex;
     flex-direction: column;
     gap: 19px;
+    height: 100%;
 }
 .cardInfo {
     display: flex;
@@ -17,12 +23,15 @@ article{
     flex-direction: column;
     flex-wrap: wrap;
     align-items: start;
+
+    margin: 12px 0;
     @media (min-width: 580px) {
         flex-direction: row;
+        margin-bottom: 20px;
     }
     .price {
+        margin-top: 4px;
         font-size: 16px;
-
         @media (min-width: 820px) {
             font-size: 20px;
         }
@@ -68,7 +77,6 @@ article{
 }
 
 .title {
-    height: 50px;
     @media (min-width: 820px) {
         font-size: 16px;
         width: 151px;

@@ -19,6 +19,9 @@
     &:hover {
         border: 1px solid #dfe3eb;
     }
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
 }
 .button {
     position: absolute;

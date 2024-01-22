@@ -29,7 +29,7 @@ export const Catalog = () => {
           {data?.map((item, i) => (
             // <SwiperSlide >
             <li key={i}>
-              <Link to={`/category?slug=${item}`} className={styles.link}>
+              <Link to={`/category?category=${item}`} className={styles.link}>
                 {item}
               </Link>
             </li>
